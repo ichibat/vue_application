@@ -7,10 +7,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/test', function(req,res) {
+app.post('/test', function(req, res) {
   res.send({
-    message: 'hello, world!'
-  });
+    message: req.body.text
+  })
 })
 
 app.listen(process.env.PORT || 3000);
